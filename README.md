@@ -15,7 +15,7 @@ git_user_email: your@email.address
 
 ## Dependencies
 
-* [roderik.superlumic-homebrew](https://github.com/superlumic/ansible-role-homebrew)
+* [brickstertwo.superlumic-homebrew](https://github.com/Brickstertwo/ansible-role-homebrew)
 * [roderik.superlumic-osx-defaults](https://github.com/superlumic/ansible-role-osx-defaults)
 
 # Usage
