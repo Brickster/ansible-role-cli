@@ -12,5 +12,3 @@ galaxy_info:
     - system
 dependencies:
   - brickstertwo.superlumic-homebrew
-  - roderik.superlumic-osx-defaults
-
