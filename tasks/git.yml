@@ -17,22 +17,22 @@
     src: "gitconfig"
     dest: "/usr/local/etc/gitconfig"
 
-- name: get git username
+# set git user name
+- name: get git user name
   shell: git config --global --get user.name
   register: git_user_name_result
-  changed_when: False
+  changed_when: no
   ignore_errors: yes
+- name: set git use rname
+  shell: git config --global user.name "{{git_user_name}}"
+  when: git_user_name_result.stdout != git_user_name
 
+# set git user email
 - name: get git user email
   shell: git config --global --get user.email
   register: git_user_email_result
-  changed_when: False
+  changed_when: no
   ignore_errors: yes
-
-- name: set git username
-  shell: git config --global user.name "{{git_user_name}}"
-  when: git_user_name_result.stdout != "{{git_user_name}}"
-
 - name: set git user email
   shell: git config --global user.email "{{git_user_email}}"
-  when: git_user_email_result.stdout != "{{git_user_email}}"
+  when: git_user_email_result.stdout != git_user_email
