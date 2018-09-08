@@ -34,8 +34,8 @@
 
 - name: set terminal column count
   shell: /usr/libexec/PlistBuddy -c "add ':Window Settings:base16-eighties.dark.256:columnCount' integer 160" ~/Library/Preferences/com.apple.Terminal.plist
-  when: not terminal_profile_installed|skipped
+  when: terminal_profile_installed is not skipped
 
 - name: set terminal row count
   shell: /usr/libexec/PlistBuddy -c "add ':Window Settings:base16-eighties.dark.256:rowCount' integer 55" ~/Library/Preferences/com.apple.Terminal.plist
-  when: not terminal_profile_installed|skipped
+  when: terminal_profile_installed is not skipped
